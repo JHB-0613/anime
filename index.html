@@ -102,6 +102,28 @@
             font-size: 0.9em;
             color: #6c757d;
         }
+        /* 답변 입력창 스타일 개선 */
+        .user-input {
+            width: 100%;
+            min-height: 150px; /* 기본 높이를 150px로 확대 */
+            padding: 15px;
+            border: 2px solid #dee2e6; /* 테두리를 조금 더 명확하게 */
+            border-radius: 8px;
+            resize: vertical; /* 사용자가 아래로 늘릴 수 있도록 허용 */
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            background-color: #fdfdfd;
+            transition: all 0.2s ease; /* 부드러운 변화 효과 */
+        }
+        
+        .user-input:focus {
+            outline: none;
+            border-color: #0056b3; /* 포커스 시 테두리 색상 변경 */
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0,86,179,0.15);
+        }
     </style>
 </head>
 <body>
@@ -360,6 +382,13 @@
                     }
                 }
             });
+        });
+    });
+    // 입력 내용에 따라 높이 자동 조절
+    document.querySelectorAll('.user-input').forEach(textarea => {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
         });
     });
 </script>
