@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><움직이는일본, 애니메이션속문화읽기>시험대비문제</title>
+    <title>영상문화학 기말고사 핵심 키워드 훈련 시스템</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
             --container-bg: #ffffff;
-            --primary-color: #2b3e50;
-            --accent-color: #18bc9c;
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --keyword-color: #16a085;
             --text-color: #333333;
             --text-muted: #7f8c8d;
-            --border-color: #ecf0f1;
+            --border-color: #e2e8f0;
             --shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
@@ -26,7 +27,7 @@
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.6;
             padding: 40px 20px;
         }
 
@@ -44,7 +45,7 @@
 
         header h1 {
             color: var(--primary-color);
-            font-size: 24pt;
+            font-size: 22pt;
             margin-bottom: 10px;
         }
 
@@ -58,7 +59,7 @@
         }
 
         .lecture-title {
-            font-size: 14pt;
+            font-size: 13pt;
             color: #ffffff;
             background-color: var(--primary-color);
             padding: 10px 15px;
@@ -72,63 +73,59 @@
             background-color: var(--container-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
         }
 
         .problem-number {
             font-size: 10pt;
             font-weight: bold;
-            color: var(--accent-color);
-            text-transform: uppercase;
+            color: var(--keyword-color);
             letter-spacing: 1px;
             margin-bottom: 5px;
             display: block;
         }
 
         .problem-text {
-            font-size: 12pt;
+            font-size: 11.5pt;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        /* 임의 답안 입력창 스타일 */
         .user-input-zone {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .user-textarea {
             width: 100%;
-            height: 120px;
-            padding: 12px;
-            border: 1px solid #ced4da;
+            height: 90px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
             border-radius: 6px;
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-family: inherit;
             resize: vertical;
-            transition: border-color 0.2s;
         }
 
         .user-textarea:focus {
             outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(24, 188, 156, 0.1);
+            border-color: var(--keyword-color);
+            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1);
         }
 
         .card-actions {
             display: flex;
             justify-content: flex-start;
-            gap: 10px;
         }
 
         .btn-toggle {
-            background-color: #f1f3f5;
+            background-color: #f1f5f9;
             color: var(--primary-color);
             border: none;
-            padding: 8px 16px;
-            font-size: 10pt;
+            padding: 6px 14px;
+            font-size: 9.5pt;
             font-weight: 600;
             border-radius: 4px;
             cursor: pointer;
@@ -136,59 +133,53 @@
         }
 
         .btn-toggle:hover {
-            background-color: var(--accent-color);
+            background-color: var(--keyword-color);
             color: white;
         }
 
         .answer-box {
             display: none;
-            margin-top: 15px;
+            margin-top: 12px;
             padding: 15px;
             border-top: 1px dashed var(--border-color);
-            background-color: #fafbfc;
+            background-color: #f8fafc;
             border-radius: 6px;
         }
 
         .answer-box.show {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
+            animation: fadeIn 0.25s ease-in-out;
         }
 
-        .answer-title {
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            font-size: 10.5pt;
-        }
-
-        .answer-content {
-            font-size: 11pt;
-            text-align: justify;
-            color: #444444;
-        }
-
-        .answer-content p {
+        .keyword-tag-container {
             margin-bottom: 10px;
         }
-        
-        .answer-content p:last-child {
-            margin-bottom: 0;
-        }
 
-        .answer-keyword {
+        .keyword-tag {
             display: inline-block;
-            background-color: #e8f8f5;
-            color: var(--accent-color);
-            padding: 2px 6px;
+            background-color: #e6fffa;
+            color: var(--keyword-color);
+            padding: 2px 8px;
             border-radius: 4px;
             font-size: 9.5pt;
             font-weight: bold;
-            margin-right: 5px;
-            margin-top: 10px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #b2f5ea;
+        }
+
+        .answer-summary {
+            font-size: 10.5pt;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .answer-summary strong {
+            color: var(--accent-color);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
+            from { opacity: 0; transform: translateY(-3px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -203,11 +194,11 @@
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 4px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 10pt;
+            font-size: 9.5pt;
         }
 
         .btn-global:hover {
@@ -219,15 +210,16 @@
 
 <div class="container">
     <header>
-        <h1><움직이는일본, 애니메이션속문화읽기></h1>
-        <p>박스에 임의 답안을 직접 작성한 뒤 모범 답안 및 핵심 분석 키워드와 대조해 보세요.</p>
+        <h1>기말고사 핵심 키워드 훈련 시스템 (간략 버전)</h1>
+        <p>답안을 임의 작성한 뒤, 필수 학술 키워드와 핵심 요약문이 포함되었는지 체크하세요.</p>
     </header>
 
     <div class="global-controls">
-        <button class="btn-global" onclick="toggleAll(true)">모든 정답 펼치기</button>
-        <button class="btn-global" style="background-color: var(--text-muted);" onclick="toggleAll(false)">모든 정답 접기</button>
+        <button class="btn-global" onclick="toggleAll(true)">모든 키워드 펼치기</button>
+        <button class="btn-global" style="background-color: var(--text-muted);" onclick="toggleAll(false)">모든 키워드 접기</button>
     </div>
 
+    <!-- 제9강 -->
     <div class="lecture-block">
         <div class="lecture-title">제9강 기술과 자아, 사이버펑크의 철학</div>
         
@@ -235,21 +227,20 @@
             <span class="problem-number">문제 1</span>
             <div class="problem-text">〈공각기동대(1995)〉의 '사이버그와 고스트', 그리고 속편 〈이노센스(2004)〉의 '안드로이드와 인형'이 각각 인간의 정체성에 대해 던지는 철학적 질문의 차이점을 비교하여 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>〈공각기동대(1995)〉</strong>는 유기체 기반의 테크놀로지인 '사이버그'를 통해 <strong>"신체의 어디까지를 기계로 대체해도 인간이라고 부를 수 있는가?"</strong>라는 정체성의 경계에 질문을 던집니다. 뇌의 일부를 제외한 전신이 의체화된 주인공 쿠사나기 소토코는 자아의 고유성과 영혼을 뜻하는 '고스트(Ghost)'의 존재 유무를 통해 인간성을 증명하려 하며, 기계와 인간의 물리적·정신적 경계선을 탐구합니다.</p>
-                    <p>반면, 속편 <strong>〈이노센스(2004)〉</strong>는 100% 무기체 로봇인 '안드로이드'와 '인형'을 전면에 내세워 <strong>"인간과 완전히 똑같이 행동하고 사고하는 기계(인형)에게도 영혼이 존재할 수 있는가?"</strong>라는 역방향의 질문을 던집니다. 이는 인간 중심주의적 시각에서 벗어나, 인간 역시 프로그래밍된 육체적 인형에 불과할지 모른다는 근대적 자아관의 붕괴를 다루며 인간과 사물(기계)의 본질적 동등성을 심화하여 성찰합니다.</p>
-                    <div>
-                        <span class="answer-keyword">사이버그 vs 안드로이드</span>
-                        <span class="answer-keyword">고스트(Ghost)</span>
-                        <span class="answer-keyword">인형과 자아 붕괴</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">공각기동대: 유기체 기반(사이보그)</span>
+                    <span class="keyword-tag">의체화와 고스트(Ghost)</span>
+                    <span class="keyword-tag">이노센스: 무기체 기반(안드로이드)</span>
+                    <span class="keyword-tag">인간 중심주의 비판</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 〈공각기동대〉는 인간 신체를 기계로 대체할 때 영혼(고스트)을 통해 인간의 경계를 묻는 반면, 〈이노센스〉는 인간과 닮은 인형(기계)에도 영혼이 깃들 수 있는지를 물으며 인간 중심주의적 자아관의 해체를 다룹니다.
                 </div>
             </div>
         </div>
@@ -258,26 +249,26 @@
             <span class="problem-number">문제 2</span>
             <div class="problem-text">사이버펑크 장르의 시각적·서사적 특성을 간략히 기술하고, 이 장르가 스마트폰과 AI를 마주한 현대인의 자아 인식에 어떠한 성찰을 제공하는지 비판적으로 논의하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>사이버펑크 장르의 <strong>시각적 특성</strong>은 '고도화된 기술(High Tech)'과 '부패·붕괴된 사회 현실(Low Life)'의 극단적 대조로 나타나며, 거대한 디지털 네온사인, 어둡고 비 내리는 도시, 슬럼가와 기술 엘리트 공간의 격차로 형상화됩니다. <strong>서사적 특성</strong>은 거대 기업이 지배하는 디스토피아적 세계관 속에서 사회적 시스템에 저항하거나 소외된 하층민 주체들이 자신의 정체성과 자아를 찾아가는 철학적 탐색을 핵심 구조로 삼습니다.</p>
-                    <p>이 장르는 스마트폰, 알고리즘, 생성형 AI와 고도로 밀착된 <strong>현대인의 자아 인식</strong>에 강력한 비판적 성찰을 제공합니다. 현대인은 기술을 통해 확장되는 자아를 경험하는 동시에, 알고리즘에 의해 끊임없이 데이터베이스화되고 주체성을 잠식당하고 있습니다. 사이버펑크는 테크놀로지가 단순한 도구가 아니라 우리의 인지체계와 감정을 재구조화하는 지배 권력임을 폭로하며, 'AI와 결합한 나를 진정한 자아로 인정할 수 있는가'라는 실존적 질문을 던집니다.</p>
-                    <div>
-                        <span class="answer-keyword">High Tech, Low Life</span>
-                        <span class="answer-keyword">디스토피아</span>
-                        <span class="answer-keyword">알고리즘과 주체성 잠식</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">High Tech, Low Life</span>
+                    <span class="keyword-tag">디스토피아와 거대 기업 통제</span>
+                    <span class="keyword-tag">데이터베이스화</span>
+                    <span class="keyword-tag">자아의 주체성 잠식</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 시각적으로는 고도 기술과 슬럼의 대조, 서사적으로는 디스토피아적 소외를 다룹니다. 현대인에게는 스마트폰과 AI 알고리즘에 의해 자아가 데이터화·통제되는 현실을 자각하게 하며 테크놀로지 권력에 대한 비판적 성찰을 줍니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제10강 -->
     <div class="lecture-block">
         <div class="lecture-title">제10강 전통과 현대의 공존 - 센과 치히로</div>
         
@@ -285,21 +276,20 @@
             <span class="problem-number">문제 3</span>
             <div class="problem-text">〈센과 치히로의 행방불명〉의 중심 공간인 '유바바의 목욕탕(湯屋)'이 갖는 사회학적 상징성을 '근대 자본주의적 노동'과 '일본의 회사 조직 구조'라는 측면에서 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>'근대 자본주의적 노동'의 측면:</strong> 유야(목욕탕)는 고대 신령들이 쉬어가는 신성한 전통 공간처럼 보이지만, 실질적으로는 철저한 화폐 교환 extrusion와 서비스 노동이 지배하는 세속화된 '근대 자본주의적 공장'입니다. 이곳에서는 '노동을 하지 않는 자는 존재할 가치가 없다'는 자본주의적 명령이 작동하며, 치히로가 노동 계약을 통해서만 그 사회에서 생존을 보장받고 자신의 정체성을 유지해 나간다는 점이 이를 은유합니다.</p>
-                    <p><strong>'일본의 회사 조직 구조'의 측면:</strong> 유야의 공간과 조직 체계는 일본의 전형적인 기업(회사) 구조를 반영합니다. 최고 경영자인 '유바바'를 정점으로 중간 관리자(하쿠, 토토로 모양의 지배인 등), 그리고 말단 현장 노동자(개구리, 민달팽이 요괴 등)로 이어지는 엄격한 위계적 계층 구조를 지닙니다. 이는 개인의 개성보다는 철저하게 직무와 조직의 효율성을 우선시하는 일본의 집단주의적 고용 시스템 및 기업 문화를 완벽하게 축소해 놓은 공간적 상징입니다.</p>
-                    <div>
-                        <span class="answer-keyword">세속화된 공간</span>
-                        <span class="answer-keyword">노동 계약</span>
-                        <span class="answer-keyword">일본식 위계 구조</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">세속화된 자본주의 공간</span>
+                    <span class="keyword-tag">노동을 통한 존재 인정</span>
+                    <span class="keyword-tag">엄격한 위계적 계층</span>
+                    <span class="keyword-tag">일본 회사(조직) 구조의 은유</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 유야는 노동 계약과 화폐 가치가 지배하는 자본주의적 일터를 상징하며, 유바바를 정점으로 경영자-관리자-말단 노동자로 이어지는 서열 제도는 일본 기업 특유의 집단주의적 위계 문화를 투영합니다.
                 </div>
             </div>
         </div>
@@ -308,21 +298,20 @@
             <span class="problem-number">문제 4</span>
             <div class="problem-text">일본의 '언령(言靈) 신앙' 개념을 설명하고, 유바바가 치히로의 이름을 빼앗고 '센'이라는 이름을 부여하는 계약 행위가 현대 소비 사회의 어떠한 주체성 상실을 은유하는지 분석하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>일본의 <strong>'언령(言靈, 고토다마) 신앙'</strong>이란 말(言)에는 영적인 힘과 신비로운 에너지가 깃들어 있어, 말하는 대로 실재의 사건이나 존재의 본질이 좌우된다고 믿는 고대 고유의 종교적 관념입니다. 따라서 이름을 부르거나 지배하는 행위는 그 이름이 지닌 존재의 영혼과 본질 자체를 지배하는 것을 의미합니다.</p>
-                    <p>유바바가 치히로의 이름을 강탈하고 <strong>'센'이라는 기호화된 이름</strong>을 부여하는 계약 행위는, 현대 소비 사회에서 개인이 겪는 <strong>'도구적 주체로의 전락과 정체성 상실'</strong>을 정교하게 은유합니다. '치히로'라는 고유한 역사성과 주체적 자아를 가진 이름은 자본주의 시스템 안으로 들어가는 순간 거세되며, 오직 노동의 효율성과 소비의 척도로만 환산되는 일련번호이자 부품인 '센'으로 기호화됩니다. 이는 현대인들이 직장이나 소비 시장에서 고유한 인간성을 잃고 사원번호, 신용등급, ID 등의 파편화된 기호로만 정의되는 현실을 비판하는 것입니다.</p>
-                    <div>
-                        <span class="answer-keyword">언령(言靈) 신앙</span>
-                        <span class="answer-keyword">이름의 강탈</span>
-                        <span class="answer-keyword">기호화된 노동 주체</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">언령(言靈): 말과 이름의 영적 힘</span>
+                    <span class="keyword-tag">이름의 강탈 = 존재 지배</span>
+                    <span class="keyword-tag">기호화 및 번호화</span>
+                    <span class="keyword-tag">도구적 주체로의 전락</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 말에 영적 힘이 깃들어 본질을 지배한다는 언령 사상을 기반으로 합니다. 이름을 빼앗겨 '센'으로 명명되는 것은 현대 소비·노동 사회에서 고유한 주체성을 상실하고 사원번호, ID 등 기호적 부품(소모품)으로 전락하는 소외를 은유합니다.
                 </div>
             </div>
         </div>
@@ -331,26 +320,26 @@
             <span class="problem-number">문제 5</span>
             <div class="problem-text">신도의 '정(淨)'과 '부정(不淨)'의 관점에서, 작품 속 '오물 신' 에피소드가 보여주는 산업화의 폐해와 전통적 정화 의식의 현대적·생태학적 재구성 방식에 대해 논의하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>일본 신도(神道)의 핵심 논리는 세계를 깨끗하고 신성한 상태인 <strong>'정(淨, 키요시)'</strong>과 오염되고 생명력이 저하된 상태인 <strong>'부정(不淨, 케가레)'</strong>의 대립 및 순환으로 파악하는 것입니다. 원래 풍요로운 자연의 강을 관장하던 고귀한 신령이 인간 사회의 쓰레기와 오물로 뒤덮여 유야를 찾았을 때, 목욕탕의 모든 요괴들은 이를 악취를 풍기는 극단적인 '부정(不淨)'의 존재로 취급하며 기피합니다. 이 '오물 신'의 형상은 무분별한 산업화와 자본주의적 개발이 자연 생태계를 어떻게 파괴하고 오염시켰는지를 시각적으로 폭로하는 <strong>산업화의 폐해</strong>에 대한 강력한 고발입니다.</p>
-                    <p>이 에피소드는 전통적인 정화 의식인 <strong>'미소기(禊, 몸을 씻어 부정 부패를 씻어내는 행위)'</strong>를 현대적·생태학적 맥락으로 재구성합니다. 치히로가 오물 신의 몸에 박힌 인간 사회의 폐기물(자전거, 고철 등)을 발견하고 이를 목욕탕 노동자들과 연대하여 뽑아내자, 신령은 본래의 맑은 강의 신의 모습(정화된 상태)을 회복합니다. 이는 전통적인 종교적 청결 의식을 단순한 관념적 의례를 넘어, 인간이 자연에 가한 파괴 행위를 직시하고 주체적인 실천과 연대를 통해 상처 입은 자연을 치유해야 한다는 <strong>'생태학적 정화와 공존의 메시지'</strong>로 현대화한 것입니다.</p>
-                    <div>
-                        <span class="answer-keyword">정(淨)과 부정(不淨)</span>
-                        <span class="answer-keyword">미소기(禊)의 현대화</span>
-                        <span class="answer-keyword">생태학적 정화</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">정(淨)과 부정(不淨)의 순환</span>
+                    <span class="keyword-tag">미소기(禊): 몸을 씻는 정화 의식</span>
+                    <span class="keyword-tag">환경오염과 생태적 성찰</span>
+                    <span class="keyword-tag">실천적 정화로의 재구성</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 강의 신이 쓰레기로 오염되어 '부정'한 오물 신이 된 것은 산업화의 무분별한 자연 파괴를 폭로합니다. 치히로의 노동과 연대로 오물을 제거하고 본래의 '정'한 신성을 회복하는 과정은 전통 정화 의식(미소기)을 현대적인 생태적 치유 실천으로 재구성한 것입니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제11강 -->
     <div class="lecture-block">
         <div class="lecture-title">제11강 버블의 붕괴와 내면으로의 침잠</div>
         
@@ -358,21 +347,20 @@
             <span class="problem-number">문제 6</span>
             <div class="problem-text">〈신세기 에반게리온〉 속 인물들의 '소통 거부'와 '내면 침잠' 현상이 1990년대 일본의 버블 경제 붕괴 및 청년 심리와 어떻게 맞닿아 있는지 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>1980년대 후반의 화려했던 일본의 버블 경제가 1990년대 초반 급격하게 붕괴되면서, 일본 사회는 장기 불황인 <strong>'잃어버린 10년'</strong>의 터널로 진입했습니다. 물질적 풍요가 일시에 사라진 자리에 미래에 대한 극단적인 불확실성과 패배감이 채워졌으며, 청년 세대들은 사회적 거대 담론이나 유대 관계에서 이탈하여 방 안으로 고립되는 오타쿠 현상 및 '히키코모리(은둔형 외토리)' 성향을 보였습니다.</p>
-                    <p>〈신세기 에반게리온〉의 주인공 이카리 신지를 비롯한 인물들이 보여주는 타인과의 <strong>'소통 거부'와 '내면 침잠'</strong>은 이러한 시대적 청년 심리의 직접적인 투영입니다. 타인에게 상처받기 싫어 적당한 거리를 유지하려는 <strong>'고슴도치 딜레마'</strong>, 에반게리온이라는 거대 로봇(태내 혹은 폐쇄적 안식처를 상징) 안으로 숨어버리려는 심리는 외부 세계에 대한 신뢰를 상실한 당대 청년들의 정서적 마비와 자아 붕괴, 무력감을 알레고리적으로 재현한 것입니다.</p>
-                    <div>
-                        <span class="answer-keyword">버블 경제 붕괴</span>
-                        <span class="answer-keyword">잃어버린 10년</span>
-                        <span class="answer-keyword">고슴도치 딜레마</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">버블 경제 붕괴와 불황</span>
+                    <span class="keyword-tag">잃어버린 10년의 패배감</span>
+                    <span class="keyword-tag">고슴도치 딜레마</span>
+                    <span class="keyword-tag">오타쿠 및 자폐적 고립 심리</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 버블 붕괴 이후 장기 불황(잃어버린 10년)이 오자 청년층은 무력감에 빠져 사적 영역으로 고립되었습니다. 신지의 소통 거부와 내면 침잠은 타인과의 관계에서 상처받기를 두려워하면서도(고슴도치 딜레마) 사회를 회피하려는 당대 청년들의 자폐적이고 방어적인 심리를 투영합니다.
                 </div>
             </div>
         </div>
@@ -381,21 +369,20 @@
             <span class="problem-number">문제 7</span>
             <div class="problem-text">1995년 발생한 두 가지 대형 참사(한신 대지진, 옴진리교 테러)가 당대 대중의 심리와 작품의 폐쇄적 세계관에 미친 영향을 분석하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>1995년</strong>은 일본 사회에 치유하기 힘든 트라우마를 남긴 대재앙의 해였습니다. 자연재해인 <strong>'한신·아와지 대지진'</strong>은 그동안 신뢰해 온 근대적 건축과 국가 시스템이 자연 앞에서 순식간에 붕괴할 수 있다는 무력감과 '안전 신화'의 종말을 가져왔습니다. 사회적 인재인 <strong>'옴진리교 사린 가스 테러'</strong>는 현대 종교적 광기가 일상적인 도시 한복판에서 무차별적인 학살로 이어질 수 있음을 보여주며, 타인과 사회 공동체 시스템 전체에 대한 근원적인 공포와 불신을 확산시켰습니다.</p>
-                    <p>이 두 참사는 대중 심리를 극단적인 폐쇄성과 불안으로 몰고 갔으며, 이는 同年 방영된 〈신세기 에반게리온〉의 <strong>종말론적이고 폐쇄적인 세계관</strong>과 즉각적으로 공명했습니다. 작품 속 '세컨드 임팩트'로 인해 인류의 절반이 사라진 디스토피아적 설정, 사도라는 정체불명의 외부 존재가 가하는 일상에 대한 무차별적 공격, 그리고 인류의 불완전한 영혼을 강제로 하나로 통합하려는 '인류 보완 계획'의 광기 어린 서사는 1995년의 대형 참사들이 남긴 사회적 상실감과 시스템적 취약성, 세상의 종말에 대한 공포를 텍스트 내부에 그대로 각인시킨 결과입니다.</p>
-                    <div>
-                        <span class="answer-keyword">1995년의 트라우마</span>
-                        <span class="answer-keyword">안전 신화의 종말</span>
-                        <span class="answer-keyword">종말론적 세계관</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">한신 대지진: 안전 신화의 종말</span>
+                    <span class="keyword-tag">옴진리교 테러: 공적 시스템 불신</span>
+                    <span class="keyword-tag">종말론적 불안과 고립</span>
+                    <span class="keyword-tag">디스토피아적 폐쇄 세계관</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 1995년의 두 참사는 대중에게 자연의 공포와 공적 사회 시스템에 대한 극심한 불신, 타인에 대한 공포를 안겼습니다. 이는 에반게리온 속 '세컨드 임팩트'라는 파멸적 배경, 무차별적인 사도의 공격, 타인과의 벽을 허물어 하나가 되려는 '인류보완계획' 등의 폐쇄적이고 디스토피아적인 세계관 형성에 결정적 영향을 주었습니다.
                 </div>
             </div>
         </div>
@@ -404,26 +391,26 @@
             <span class="problem-number">문제 8</span>
             <div class="problem-text">〈신세기 에반게리온〉이 토대를 마련한 '세카이계(セカイ系)' 서사의 특징을 설명하고, 이러한 형성이 등장하게 된 1990년대 말 일본의 포스트모던 사회적 배경을 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>세카이계 서사의 특징:</strong> 주인공 '나'와 히로인 '너'의 지극히 사적이고 미시적인 관계성(연애, 감정적 교류)이 국가, 사회, 사법 기관과 같은 중간 매개 구조나 구체적인 설정 설명 없이, 곧바로 '세계의 파멸'이나 '우주적 규모의 위기'라는 거대 거시적 서사와 직결되는 구조를 의미합니다. 주인공 소년과 소녀의 사소한 갈등이나 선택이 세계의 운명을 결정짓는 극단적인 내면 과잉 서사입니다.</p>
-                    <p><strong>1990년대 말 포스트모던 사회적 배경:</strong> 장동 사태나 이념적 지향점(국가적 목표, 민주화, 경제 성장 등)을 상실한 <strong>'거대 서사의 붕괴'</strong>가 본격화된 시기입니다. 신자유주의의 확산으로 인해 사회 공동체가 더 이상 개인의 안녕과 미래를 보장하거나 책임지지 않는다는 냉소주의가 팽배해졌고, 청년들은 사회를 변화시키려는 연대 대신 '내 방 안에서 나만의 취향과 캐릭터를 소비하겠다'는 파편화된 오타쿠적 포스트모던 소비 구조로 퇴행하게 되었습니다. 사회라는 무대가 소거된 자리에 오직 고독한 자아(나와 너)와 통제 불가능한 거대한 운명(세계)만 남게 된 시대적 고립이 세카이계를 탄생시킨 배경입니다.</p>
-                    <div>
-                        <span class="answer-keyword">미시적 관계와 거시적 위기</span>
-                        <span class="answer-keyword">거대 서사의 붕괴</span>
-                        <span class="answer-keyword">신자유주의적 고립</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">미시적 관계(나와 너)</span>
+                    <span class="keyword-tag">거시적 종말(세계의 위기) 직결</span>
+                    <span class="keyword-tag">중간 사회(매개)의 생략</span>
+                    <span class="keyword-tag">포스트모던: 거대 서사의 붕괴</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 세카이계는 소년·소녀의 사적인 유대 관계가 중간 사회구조 없이 곧바로 '세계의 파멸'과 직결되는 구조입니다. 1990년대 말 국가나 이데올로기가 더 이상 개인을 보호하지 못하는 '거대 서사의 붕괴'와 신자유주의적 각자도생의 심화로 인해, 사회적 연대를 포기하고 사적 관계와 내면 과잉에 몰두하게 된 포스트모던적 고립이 배경입니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제12강 -->
     <div class="lecture-block">
         <div class="lecture-title">제12강 학교와 청소년: 일상의 기호화</div>
         
@@ -431,21 +418,20 @@
             <span class="problem-number">문제 9</span>
             <div class="problem-text">일본 애니메이션에서 '학교' 공간이 가지는 집단주의적 속성을 설명하고, 그 이면에서 작동하는 규범과 동조 압력이 자아내는 '이지메(いじめ)'의 구조적 문제를 분석하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>일본 애니메이션에서 <strong>'학교'</strong>는 단순한 교육 기관을 넘어 청소년들이 소속감을 학습하고 정체성을 구성하는 핵심적인 사회화 무대인 동시에, <strong>강력한 집단주의적 규범이 작동하는 공간</strong>입니다. 학급(반)이나 동아리(부활동) 중심의 끈끈한 유대는 구성원들에게 규범에 따를 것을 요구하며, 전체의 조화와 위계를 흐트러뜨리지 않아야 한다는 무언의 <strong>'동조 압력'</strong>을 가합니다.</p>
-                    <p>이러한 집단주의의 어두운 이면에서 발생하는 구조적 문제가 바로 <strong>'이지메(いじめ)'</strong>입니다. 이지메는 단순한 개인 간의 성격 유불리나 폭력의 문제가 아니라, 집단의 동질성을 유지하려는 병리적 메커니즘에서 기인합니다. 집단의 압도적인 규범에서 조금이라도 벗어나거나 '다름'을 노출하는 이질적인 존재(타자)를 배제함으로써 내부의 결속력을 다지려는 왜곡된 동조성이 작동하는 것입니다. 주변인들 역시 가해 동조자가 되지 않기 위해 묵인하거나 방조함으로써, 이지메는 학교라는 공간 내에서 구조적으로 은폐되고 심화되는 특성을 보입니다.</p>
-                    <div>
-                        <span class="answer-keyword">동조 압력</span>
-                        <span class="answer-keyword">집단주의적 공간</span>
-                        <span class="answer-keyword">타자의 배제 구조</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">사회화와 정체성 형성 무대</span>
+                    <span class="keyword-tag">강력한 동조 압력과 규범</span>
+                    <span class="keyword-tag">집단 동질성 유지의 병리</span>
+                    <span class="keyword-tag">이질성(타자)의 구조적 배제</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 학교는 소속감과 집단 규범을 학습시키는 공간이며, 구성원에게 '동질성'을 강요하는 강한 동조 압력을 행사합니다. 이지메의 구조적 원인은 개인 간 갈등이 아니라 집단의 규범에서 벗어난 이질적인 주체(타자)를 배제함으로써 집단의 결속을 유지하려는 위선적이고 병리적인 시스템에 있습니다.
                 </div>
             </div>
         </div>
@@ -454,21 +440,20 @@
             <span class="problem-number">문제 10</span>
             <div class="problem-text">애니메이션 〈목소리의 형태〉가 장애를 대하는 비장애인 중심의 문화적 한계를 어떻게 지적하고 있으며, 진정한 소통과 공존을 위해 필요한 태도가 무엇인지 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>〈목소리의 형태〉는 청각장애인인 쇼코를 대하는 초등학교 교실과 주변 인물들의 태도를 통해 <strong>비장애인 중심주의의 위선적 한계</strong>를 날카롭게 폭로합니다. 비장애인 주체의 다수 집단은 장애인의 다름을 인정하고 진정으로 소통하려 하기보다, 장애를 학급의 효율적인 진도나 분위기를 저해하는 '불편한 짐'으로 간주합니다. 겉으로는 선의의 배려를 베푸는 척하지만, 실질적으로는 소통의 책임을 장애인 개인에게 전가하며 결국엔 이질적인 쇼코를 은밀하게 소외시키고 이지메의 타깃으로 삼는 교실의 풍경은 현대 사회의 구조적 배제와 소통 방식의 폭력성을 그대로 투영합니다.</p>
-                    <p>작품이 제시하는 <strong>진정한 소통과 공존을 위한 태도</strong>는, 자신의 내면적 죄책감이나 상처(트라우마)를 직시하고 타자의 고유한 목소리에 온전히 귀를 기울이는 <strong>'용기 있는 직면과 성찰'</strong>입니다. 주인공 쇼야가 과거의 가해 사실을 회피하지 않고 타인과 눈을 마주치지 못하던 고립의 장벽(시각적 X표시)을 스스로 깨부수는 과정처럼, 소통은 단순히 음성 언어나 수화의 기술적 교환이 아니라 서로의 다름과 결핍을 있는 그대로 인정하고 진심으로 연대하려는 주체적인 자기 반성적 태도에서 출발함을 강조합니다.</p>
-                    <div>
-                        <span class="answer-keyword">비장애인 중심주의 폭로</span>
-                        <span class="answer-keyword">트라우마의 리얼리즘</span>
-                        <span class="answer-keyword">성찰적 공존</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">비장애인 중심주의 위선</span>
+                    <span class="keyword-tag">장애를 '불편한 짐'으로 간주</span>
+                    <span class="keyword-tag">트라우마(과오)의 용기 있는 직면</span>
+                    <span class="keyword-tag">타자의 고유성 인정과 성찰</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 다수 비장애인 집단이 표면적 배려 뒤에서 장애를 소통의 걸림돌이자 '학급의 짐'으로 간주하여 은밀히 소외시키는 위선을 비판합니다. 진정한 공존을 위해서는 자신의 과거 과오와 상처를 정면으로 직시하고, 타인의 다름을 인정하며 소통의 책임을 함께 짊어지려는 자기반성적 태도가 필요합니다.
                 </div>
             </div>
         </div>
@@ -477,26 +462,26 @@
             <span class="problem-number">문제 11</span>
             <div class="problem-text">애니메이션 〈케이온!(K-ON!)〉과 같은 일상계 장르에서 '티타임'이나 '부실' 등의 기호가 현대 청소년 세대에게 어떠한 기능을 하는지 설명하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>〈케이온!〉으로 대표되는 일상계(혹은 공기계) 애니메이션에서 <strong>'경음부 부실'</strong>과 연습보다 소중하게 다뤄지는 <strong>'티타임(차와 디저트)'</strong>은 서사적 갈등을 유발하지 않는 미학적 기호들입니다. 이러한 기호들은 무한 경쟁, 입시 압박, 취업 준비 등 가혹한 생산성의 논리가 지배하는 외부 현실 세계로부터 완벽하게 격리된 <strong>'정서적 안전지대이자 안식처'</strong>로서 기능합니다.</p>
-                    <p>'부실'은 가정과 교실이라는 의무적 공간 사이에 존재하는 <strong>'제3의 해방 공간'</strong>이며, '티타임'은 성과를 내야 한다는 사회적 강박으로부터의 의도적인 이탈과 무해하고 평화로운 유대를 상징합니다. 현대 청소년 세대에게 이 장르의 기호들은 상처받지 않고 머무를 수 있는 유토피아적 일상을 가상으로 제공함으로써 현실의 피로를 치유하고 유예하는 <strong>위로와 심리적 방어기제의 기능</strong>을 수행합니다.</p>
-                    <div>
-                        <span class="answer-keyword">일상계와 공기계</span>
-                        <span class="answer-keyword">제3의 공간(부실)</span>
-                        <span class="answer-keyword">현실 유예와 치유</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">일상계: 갈등과 경쟁의 배제</span>
+                    <span class="keyword-tag">제3의 공간(해방구)</span>
+                    <span class="keyword-tag">정서적 안식처(안전지대)</span>
+                    <span class="keyword-tag">현실의 불안 유예 및 치유</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> '부실'과 '티타임'은 성과주의와 입시 경쟁이 가득한 외부 현실로부터 이탈된 유토피아적 안식처를 상징합니다. 이는 청소년들에게 어떠한 갈등이나 위협도 없는 무해하고 평화로운 유대를 가상으로 체험하게 함으로써, 현실의 불안과 스트레스를 치유하고 완충하는 유예의 기능을 수행합니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제13강 -->
     <div class="lecture-block">
         <div class="lecture-title">제13강 신카이 마코토와 세카이계</div>
         
@@ -504,21 +489,20 @@
             <span class="problem-number">문제 12</span>
             <div class="problem-text">'세카이계(セカイ系)' 서사의 구조적 정의를 '나와 너'의 관계성과 '세계의 위기'라는 관점에서 설명하고, 국가나 사회라는 중간 매개가 생략된 시대적 배경을 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>구조적 정의:</strong> 세카이계 서사는 주인공인 '나(주인공 소년)'와 '너(히로인 소녀)'의 지극히 사적이고 미시적인 관계성이나 내면의 독백이, 국가나 사회적 시스템과 같은 구체적인 중간 맥락을 완전히 생략한 채, 곧바로 멸망이나 루프 등 <strong>'세계의 위기(거시적 파멸)'</strong>와 직접 연결되는 서사적 구조를 가집니다. 즉, 사회학적 장치 없이 두 사람의 연애 전선이나 감정 상태가 세계의 존망을 결정짓는 인과적 도약을 보여줍니다.</p>
-                    <p><strong>시대적 배경:</strong> 이러한 매개의 생략은 1990년대 후반 일본의 <strong>'신자유주의적 고립'과 '거대 서사의 실종'</strong>이라는 포스트모던 현실을 강력하게 반영합니다. 버블 경제 붕괴 이후 냉전 체제의 종식과 함께 사회를 더 좋은 방향으로 바꾸자는 공동체적 연대나 거대 이념(거대 서사)이 완전히 신뢰를 잃고 붕괴했습니다. 국가나 제도가 더 이상 개인의 안녕을 책임지지 않고 '각자도생'을 요구하는 시장 논리 속에서, 원자화된 개인들은 거대한 사회 구조를 인지하거나 연대하기를 포기하게 되었습니다. 그 결과, 오직 직관적으로 느낄 수 있는 '내 방 안의 자아(나와 너)'와 통제 불가능하게 다가오는 '거대한 외부 시스템(우주/세계)'의 양극단만 남게 된 것입니다.</p>
-                    <div>
-                        <span class="answer-keyword">나와 너의 관계성</span>
-                        <span class="answer-keyword">사회적 매개의 소거</span>
-                        <span class="answer-keyword">포스트모던 냉소주의</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">미시적 연애와 거시적 파멸</span>
+                    <span class="keyword-tag">사회적 중간 단계 생략</span>
+                    <span class="keyword-tag">포스트모던: 거대 서사의 실종</span>
+                    <span class="keyword-tag">신자유주의적 각자도생과 고립</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 소년·소녀의 지극히 사적이고 미시적인 연애 전선이 국가·사회적 맥락 없이 직접 '세계의 종말(위기)'과 조우하는 서사 구조입니다. 배경은 90년대 말 냉전 종식 및 버블 경제 붕괴로 공동체적 가치(거대 서사)가 사라지고, 국가가 개인을 보장하지 않는 신자유주의 지형 속에서 주체들이 방 안으로 원자화·고립된 포스트모던 현실을 반증합니다.
                 </div>
             </div>
         </div>
@@ -527,21 +511,20 @@
             <span class="problem-number">문제 13</span>
             <div class="problem-text">아즈마 히로키의 '거대 서사의 붕괴'와 '데이터베이스 소비론'을 바탕으로, 현대인들이 깊이 있는 스토리보다 파편화된 기호(모에 속성)를 취사선택하여 소비하는 현상을 설명하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>비평가 아즈마 히로키는 포스트모던 시대를 맞아 사회 전체을 관통하던 거대한 가치체계나 인과적 세계관이 사라진 현상을 <strong>'거대 서사의 붕괴'</strong>로 진단했습니다. 과거 소비자들이 작품 이면에 숨겨진 깊이 있는 주제의식과 통일된 스토리를 소비했다면, 거대 서사가 소거된 시대의 포스트모던 소비자들은 작품의 겉면에 드러난 파편화된 매력 요소들의 창고, 즉 <strong>'데이터베이스'</strong> 자체를 소비하게 됩니다.</p>
-                    <p>이것이 바로 <strong>'데이터베이스 소비론'</strong>입니다. 현대 오타쿠 및 대중 소비자들은 하나의 완결된 대하 서사보다, 고양이 귀, 츤데레 성격, 안경, 특정 목소리 톤 등 데이터베이스에 정렬된 파편화된 기호인 <strong>'모에 속성'</strong>에 정동(Affect)을 느끼고 이를 개별적으로 취사선택하여 소비합니다. 소비자는 오리지널 스토리의 깊이와 상관없이 자기가 좋아하는 기호적 조각들만 조합하여 캐릭터를 향유하며, 이는 2차 창작과 시뮬라크르의 무한 증식으로 이어집니다. 즉, 깊이 있는 세계를 탐구하던 주체에서 파편화된 기호의 자극만을 즉각적으로 소비하는 '데이터베이스적 동물'로 소비 패러다임이 전환된 현상을 설명합니다.</p>
-                    <div>
-                        <span class="answer-keyword">아즈마 히로키</span>
-                        <span class="answer-keyword">데이터베이스 소비</span>
-                        <span class="answer-keyword">모에 속성 취사선택</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">거대 서사(이념·세계관)의 상실</span>
+                    <span class="keyword-tag">모에 속성 데이터베이스</span>
+                    <span class="keyword-tag">파편화된 기호의 취사선택</span>
+                    <span class="keyword-tag">데이터베이스적 동물화 소비</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 포스트모던 시대 통합적 이념이나 깊이 있는 스토리(거대 서사)가 신뢰를 잃자, 소비자들은 캐릭터 매력 요소의 창고인 '데이터베이스'에 집중합니다. 현대인들은 내러티브의 깊이와 상관없이 츤데레, 외모적 기호 등 파편화된 '모에 속성'만을 자유롭게 골라 정동적으로 소비하며, 이는 깊은 탐구보다 즉각적 자극에 반응하는 소비 양식의 변화를 보여줍니다.
                 </div>
             </div>
         </div>
@@ -550,26 +533,26 @@
             <span class="problem-number">문제 14</span>
             <div class="problem-text">〈너의 이름은.〉, 〈스즈메의 문단속〉 등 신카이 마코토 감독의 작품들이 한국 청년 세대에게 큰 공감대를 형성한 이유를 분석하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>첫째, <strong>사회적 재난의 기억과 애도 메커니즘의 공유</strong>입니다. 신카이 마코토의 재난 3부작은 동일본 대지진이라는 일본의 국가적 트라우마를 다루고 있지만, 이는 세월호 참사, 이태원 참사 등 예상치 못한 사회적 참사와 거대 재난을 연속적으로 목격하며 깊은 무력감과 상실감을 공유하고 있는 한국 청년 세대의 집단적 트라우마와 직각으로 공명합니다. 작품 속에서 과거의 상처를 회피하지 않고 문을 닫으며 기억하고 <strong>"위로와 치유"</strong>를 건네는 성숙한 애도의 방식이 한국 청년들에게 깊은 정서적 정화를 선사했습니다.</p>
-                    <p>둘째, <strong>원자화된 고독감과 관계성 회복에 대한 열망</strong>입니다. 한국의 청년 세대 역시 극심한 무한 경쟁과 취업난, 신자유주의적 각자도생의 현실 속에서 심각한 단절과 소외를 경험하고 있습니다. 국가와 사회가 나를 구원해 줄 수 없다는 상실감 속에서, 시공간을 초월해 나를 알아봐 주고('너의 이름은.'), 무너져가는 세계 속에서도 끝내 서로를 구원해 내는 미시적이고 절대적인 타자와의 연결 서사는 외로운 한국 청년들의 내면적 결핍과 '느슨하지만 확실한 연대'에 대한 갈망을 완벽하게 충족시켜 주었기 때문입니다.</p>
-                    <div>
-                        <span class="answer-keyword">재난과 집단 트라우마</span>
-                        <span class="answer-keyword">사회적 애도</span>
-                        <span class="answer-keyword">연결과 구원의 서사</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">사회적 참사와 참상의 트라우마</span>
+                    <span class="keyword-tag">기억과 공적 애도(문단속)의 공유</span>
+                    <span class="keyword-tag">각자도생과 고독감</span>
+                    <span class="keyword-tag">미시적·절대적 연결의 열망</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 세월호나 이태원 참사 등 예상치 못한 거대 재난을 목격하며 상실을 공유한 한국 청년들에게 작품 속 폐허를 돌아보며 슬픔을 치유하는 '공적 애도'의 방식이 큰 정서적 정화를 주었습니다. 또한 경쟁과 단절 속에서 각자도생하는 외로운 청년들에게, 시공간을 초월해 나를 알아보고 구원해 주는 절대적인 타자와의 '연결의 서사'가 강력한 위로로 작용했기 때문입니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제14강 -->
     <div class="lecture-block">
         <div class="lecture-title">제14강 직장 생활과 노동 현실 애니메이션 분석</div>
         
@@ -577,21 +560,20 @@
             <span class="problem-number">문제 15</span>
             <div class="problem-text">일본 직장 문화를 상징하는 '사축(社畜)'의 개념을 정의하고, 이것이 발생하는 구조적 모순(장시간 노동, 동조 압력 등)을 애니메이션 〈어그레시브 레츠코〉의 묘사를 바탕으로 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>'사축(社畜, 샤치쿠)'</strong>이란 '회사(会社)'와 '가축(家畜)'의 합성어로, 자신의 주체성과 개인의 삶을 완전히 포기한 채 오직 회사의 이익과 명령을 위해 가축처럼 순종하며 자발적으로 노동을 착취당하는 현대 직장인의 비극적인 초상을 뜻하는 기호학적 개념입니다.</p>
-                    <p>〈어그레시브 레츠코〉는 이러한 사축을 유발하는 일본 직장 문화의 <strong>구조적 모순</strong>을 사실적인 풍자로 묘사합니다. 주인공 레츠코는 상사의 불합리한 업무 지시와 폭언 속에서도 거절하지 못하고 <strong>'장시간 노동(야근)'</strong>을 수행하며, 퇴근 후에도 상사의 비위를 맞추기 위한 강제적 회식 문화에 동원됩니다. 이는 상명하복의 군대식 관료제와 '남들이 다 참으니 너도 참아야 한다'는 집단주의적 <strong>'동조 압력'</strong>이 결합된 결과입니다. 시스템의 사슬을 끊고 나가지 못하게 만드는 구조적 덫 안에서, 레츠코가 낮에는 가식적인 미소(감정 노동)로 버티다 밤마다 노래방에서 데스메탈을 부르며 분노를 배설하는 모습은 사축화된 현대 청년 노동자의 억압된 심리적 현실을 예리하게 대변합니다.</p>
-                    <div>
-                        <span class="answer-keyword">사축(社畜)의 알레고리</span>
-                        <span class="answer-keyword">감정 노동과 관료제</span>
-                        <span class="answer-keyword">구조적 배설(데스메탈)</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">사축(社畜): 회사의 가축이 된 직장인</span>
+                    <span class="keyword-tag">관료제와 강제 초과 근로(야근)</span>
+                    <span class="keyword-tag">동조 압력과 상명하복 위계</span>
+                    <span class="keyword-tag">감정 노동과 이중적 분열</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 사축은 주체성과 삶의 존엄을 버리고 회사의 이익을 위해 노예처럼 일하는 직장인을 풍자하는 개념입니다. 〈레츠코〉는 불합리한 업무와 폭언 앞에서도 군대식 위계와 남들을 따라 참아야 한다는 '동조 압력' 때문에 거절하지 못하고 만성적 '장시간 노동'에 짓눌리는 모순을 드러냅니다. 낮에는 가식적 미소(감정 노동), 밤에는 데스메탈(분노 배설)로 분열되는 모습이 이를 증명합니다.
                 </div>
             </div>
         </div>
@@ -600,21 +582,20 @@
             <span class="problem-number">문제 16</span>
             <div class="problem-text">애니메이션 제작 현장을 그린 〈시로바코(SHIROBAKO)〉를 중심으로, 문화산업으로서의 애니메이션이 청년 노동자의 현실과 업계의 구조적 부조리를 어떻게 반영하는지 분석하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>〈시로바코〉는 꿈의 산업으로 포장된 애니메이션 제작 현장의 화려한 막후를 걷어내고, 문화산업의 최하단에 위치한 <strong>청년 노동자들의 가혹한 현실과 부조리한 노동 환경</strong>을 하이퍼리얼리즘으로 포착합니다. 주인공 미야모리 아오이를 비롯한 청년들은 '열정'과 '꿈'을 담보로 업계에 진입하지만, 현실에서 마주하는 것은 만성적인 저임금, 불규칙한 밤샘 노동, 고도의 마감 압박입니다.</p>
-                    <p>특히 작품은 업계의 <strong>구조적 부조리</strong>를 가감 없이 노출합니다. 원화가들이 편당 수백 엔 수준의 열악한 단가로 인해 생계를 위협받는 프리랜서 노동 구조, 원고 마감을 지연시키는 불성실한 크리에이터와 이를 수습하기 위해 발로 뛰는 진행팀의 고군분투, 디지털 전환 과정에서 발생하는 세대 갈등 등을 생생히 묘사합니다. 이는 자본의 논리에 의해 철저히 분업화된 콘텐츠 제조 공정 속에서, 청년들의 '문화적 장인정신'과 열정이 어떻게 자본주의적 시스템에 의해 착취되고 소모되는지를 잘 보여주는 텍스트적 증거입니다.</p>
-                    <div>
-                        <span class="answer-keyword">시로바코(SHIROBAKO)</span>
-                        <span class="answer-keyword">열정 페이와 장인 노동</span>
-                        <span class="answer-keyword">하이퍼리얼리즘</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">하이퍼리얼리즘적 고증</span>
+                    <span class="keyword-tag">만성적 저임금과 마감 압박</span>
+                    <span class="keyword-tag">프리랜서 노동의 취약성</span>
+                    <span class="keyword-tag">열정 착취(착취의 미화 우려)</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 문화산업 최하단 청년들의 만성적인 밤샘 과로, 기한 압박, 건당 페이 단가 체제하에서 생계를 위협받는 프리랜서(신입 원화가, 성우 등)의 불완전한 노동 현실을 여과 없이 반영합니다. 좋아하는 일을 직업으로 삼은 대가로 불합리한 제도를 인내하게 만드는 '열정 착취' 이데올로기의 그림자를 실감 나게 포착했습니다.
                 </div>
             </div>
         </div>
@@ -623,26 +604,26 @@
             <span class="problem-number">문제 17</span>
             <div class="problem-text">〈배를 엮다〉의 아날로그적 사전 편집 노동과 〈시로바코〉의 디지털 콘텐츠 제조 공정을 비교하여, 노동의 차이를 서술하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>〈배를 엮다〉</strong>가 보여주는 아날로그적 사전 편집 노동은 <strong>'영속성과 응축의 시간성'</strong>을 지닌 지극히 정적이고 깊은 '학술적 노동'입니다. 한 권의 종이 사전을 완성하기 위해 15년이라는 장기적인 세월 동안 단어를 수집하고 대조하며, 유행에 흔들리지 않고 인류의 지식 기반을 지탱하는 장인정신의 극치를 예찬합니다. 노동의 호흡이 대단히 길고 내면적인 깊이를 추구합니다.</p>
-                    <p>반면, <strong>〈시로바코〉</strong>의 디지털 콘텐츠 제조 공정은 <strong>'초 단위로 분쇄된 소비재형 시간성'</strong>을 지닌 격정적인 '현대 콘텐츠 제조 노동'입니다. 매주 방송 펑크 위기와 지연되는 작화 원고, 수시로 터지는 디지털 이펙트 오류를 수습해야 하는 숨 가쁜 속도감과 즉각적인 감정 소모의 리얼리즘을 보입니다. 트렌드에 따라 초고속으로 소모되고 휘발되는 미디어 산업의 특성상, 노동자는 마감이라는 압도적인 속도의 폭력 앞에 끊임없이 노출된다는 점에서 아날로그 노동과 근본적인 차이를 보입니다.</p>
-                    <div>
-                        <span class="answer-keyword">시간성의 대조</span>
-                        <span class="answer-keyword">아날로그 장인정신</span>
-                        <span class="answer-keyword">초고속 디지털 제조</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">배를 엮다: 영속성과 정적 시간성</span>
+                    <span class="keyword-tag">아날로그 학술 장인 노동</span>
+                    <span class="keyword-tag">시로바코: 분쇄된 소비재형 시간성</span>
+                    <span class="keyword-tag">디지털 초고속 제조 공정</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 〈배를 엮다〉의 노동은 평생에 걸쳐 단어를 모으는 15년의 긴 호흡을 지닌 정적이고 깊이 있는 '아날로그 학술 장인 노동'입니다. 반면, 〈시로바코〉의 노동은 매주 찾아오는 마감 위기와 디지털 결함을 초 단위로 수습해야 하는 격정적이고 소모성 높은 '디지털 초고속 미디어 제조 공정'이라는 점에서 뚜렷한 시간성 및 소모의 격차를 보입니다.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- 제15강 -->
     <div class="lecture-block">
         <div class="lecture-title">제15강 하위문화와 팬덤 경제 특강</div>
         
@@ -650,21 +631,20 @@
             <span class="problem-number">문제 18</span>
             <div class="problem-text">팬덤 경제의 '팬 노동(Fan Labor)' 메커니즘을 설명하고, 팬들이 자발적으로 수행하는 다양한 활동과 이에 대해 얻는 '정동적 보상(Affective Reward)'의 관계를 논의하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>'팬 노동(Fan Labor)' 메커니즘:</strong> 문화 정치경제학적 관점에서, 미디어 기업이 팬덤에게 직접적인 임금을 지급하지 않음에도 불구하고, 팬들이 자발적으로 콘텐츠의 가치를 증식시키는 생산적 활동을 수행하고, 기업은 이 가치를 자본으로 치환하여 브랜드 자산과 주가를 올리는 구조를 뜻합니다. 팬들은 단순한 수동적 소비자에 머물지 않고 적극적인 마케터이자 생산자로 기능합니다.</p>
-                    <p>팬들은 커뮤니티 내 바이럴 홍보, 가이드북 제작, 자발적 이벤트 기획, 대규모 팬아트 및 2차 창작물 생산 등의 <strong>자발적 활동(노동)</strong>을 수행합니다. 이 과정에서 팬들이 요구하는 대가는 금전적 보상이 아니라 철저한 <strong>'정동적 보상(Affective Reward)'</strong>입니다. 이는 캐릭터의 성장을 지켜보며 느끼는 감정적 충족감, 공동체 내에서 다른 팬들과 교류하며 얻는 강력한 소속감과 연대감, 그리고 자신이 좋아하는 대상을 향한 애착(정동)의 발현 그 자체입니다. 기업은 팬덤 내의 이러한 정서적 선순환 메커니즘을 영리하게 활용하여 팬들의 '열정'을 합법적이고 영속적인 '자본 가치'로 전환합니다.</p>
-                    <div>
-                        <span class="answer-keyword">팬 노동(Fan Labor)</span>
-                        <span class="answer-keyword">정동적 보상</span>
-                        <span class="answer-keyword">자발적 가치 창출</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">팬 노동(Fan Labor): 비임금적 가치 생산</span>
+                    <span class="keyword-tag">자발적 홍보·2차 창작 활동</span>
+                    <span class="keyword-tag">정동적 보상(Affective Reward)</span>
+                    <span class="keyword-tag">애착, 소속감, 공동체 연대</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 팬 노동은 기획사가 임금을 주지 않아도 팬들이 자발적으로 마케팅과 콘텐츠 재생산을 수행하여 원작 IP의 자본 가치를 증식시키는 메커니즘입니다. 팬들이 움직이는 이유는 경제적 보상이 아닌 '정동적 보상' 때문인데, 이는 캐릭터 성장에 따른 대리만족, 팬 덤 공동체 내에서의 강한 유대감과 소속감, 자기표현 욕구의 실현 등 정서적 가치를 획득하는 관계성에서 기인합니다.
                 </div>
             </div>
         </div>
@@ -673,21 +653,20 @@
             <span class="problem-number">문제 19</span>
             <div class="problem-text">정동(Affect) 경제학의 관점에서, 현대 미디어 믹스(예: 〈러브라이브!〉 프로젝트)가 단순한 작품(Text) 소비를 넘어 '캐릭터에 대한 애착'과 '관계 및 경험(Context)'을 어떻게 확장하여 가치를 창출하는지 설명하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
-                <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p>정동(Affect) 경제학이란 신체적·정서적 반응과 강력한 애착 감정이 어떻게 경제적 가치와 구매 행동으로 전환되는지를 연구하는 틀입니다. 〈러브라이브!〉 프로젝트와 같은 현대 트랜스미디어 믹스는 단순한 TV 애니메이션이라는 <strong>텍스트(Text) 소비</strong>에 갇히지 않고, 팬들의 삶 전반을 파고드는 복합적인 <strong>맥락(Context)을 설계</strong>하여 폭발적인 부가가치를 창출합니다.</p>
-                    <p>기업은 잡지 투표를 통해 팬이 직접 아이돌의 포지션을 정하게 하거나 공식 앱을 통해 실시간 소통을 의제화하여 <strong>'캐릭터에 대한 주체적 애착'</strong>을 형성시킵니다. 더 나아가, 화면 속 2D 캐릭터의 안무와 목소리를 담당한 실제 성우들이 대규모 도쿄돔 등에서 현실 라이브 콘서트를 개최하는 <strong>2.5차원 비즈니스</strong>를 전개합니다. 팬들은 콘서트장에서 수만 명과 동시에 야광봉 안무(Call)를 맞추며 단순한 구경꾼이 아닌 무대 연출의 일원으로서 '관계와 경험의 확장'을 체험합니다. 가상과 현실의 경계를 무너뜨리는 이러한 다차원적 경험 설계는 팬덤에게 대체 불가능한 정서적 몰입을 제공하며, 앨범, 굿즈, 라이브 티켓의 반복 구매로 이어지는 고부가가치 정동 경제를 완성합니다.</p>
-                    <div>
-                        <span class="answer-keyword">정동 경제학</span>
-                        <span class="answer-keyword">트랜스미디어 믹스</span>
-                        <span class="answer-keyword">2.5차원 아레나 비즈니스</span>
-                    </div>
+                <div class="keyword-tag-container">
+                    <span class="keyword-tag">정동 경제학: 감정과 애착의 자본화</span>
+                    <span class="keyword-tag">텍스트(Text)에서 맥락(Context)으로</span>
+                    <span class="keyword-tag">2.5차원 비즈니스(성우 동기화)</span>
+                    <span class="keyword-tag">물리적 공동체 경험 설계</span>
+                </div>
+                <div class="answer-summary">
+                    <strong>[요약]</strong> 정동 경제학 관점에서 현대 미디어 믹스는 고정된 애니메이션 스크린(텍스트) 소비를 넘어, 팬 참여형 투표와 가챠 게임을 통해 '캐릭터에 대한 주체적 애착'을 확장합니다. 나아가 가상 캐릭터와 무대 안무를 100% 일치시킨 실제 성우들의 초대형 라이브 콘서트(2.5차원)라는 '경험과 맥락'을 판매함으로써, 팬들이 물리적 공간에서 집단적 카타르시스를 공유하게 하고 다차원적 소비를 지속시키는 폭발적 경제 가치를 만듭니다.
                 </div>
             </div>
         </div>
@@ -696,20 +675,22 @@
             <span class="problem-number">문제 20</span>
             <div class="problem-text">애니메이션 속 가상의 배경이 현실의 경제적 부가가치로 전환되는 '성지순례(聖地巡禮)의 경제학'을 설명하시오.</div>
             <div class="user-input-zone">
-                <textarea class="user-textarea" placeholder="이곳에 자신의 임의 답안을 입력해 보세요..."></textarea>
+                <textarea class="user-textarea" placeholder="답안 작성 및 키워드 매칭 연습..."></textarea>
             </div>
             <div class="card-actions">
-                <button class="btn-toggle" onclick="toggleAnswer(this)">정답 및 해설 보기</button>
+                <button class="btn-toggle" onclick="toggleAnswer(this)">키워드 및 해설 보기</button>
             </div>
             <div class="answer-box">
                 <div class="answer-title">모범 답안 및 핵심 분석</div>
-                <div class="answer-content">
-                    <p><strong>'성지순례(聖地巡禮, 콘텐츠 투어리즘)'의 경제학</strong>이란, 애니메이션 텍스트 속 배경으로 등장한 평범한 현실의 공간(방파제, 기차역, 계단 등)이 팬덤의 기호 소비 맥락 안에서 '역사적 유적' 혹은 '신성한 공간'으로 격상되면서, 현실의 실질적인 지역 경제 활성화와 부가가치 창출로 이어지는 포스트모던 경제 현상입니다.</p>
-                    <p>팬들은 가상 공간의 감동을 신체적으로 재형험하기 위해 실제 로케이션 현장을 방문하여 작중 인물과 똑같은 구도로 사진을 찍고, 지역 소상공인들과 교류하며 숙박, 교통, 요식업 전반에 걸쳐 막대한 소비를 유행시킵니다. 이 메커니즘의 핵심은 단순한 일회성 관광이 아닌 <strong>'상생 가치 모델의 선순환'</strong>에 있습니다. 미디어 기업과 지자체, 지역 주민들이 협력하여 한정판 성지 굿즈를 개발하고, 팬덤 특유의 높은 도덕성과 예의범절(쓰레기 줍기, 성지 매너 등)을 바탕으로 정겨운 장기 상생 관계를 지속합니다. 이는 쇠퇴해 가던 지방 도시를 전 세계 충성도 높은 글로벌 팬들이 유입되는 국제 로컬 투어리즘의 허브로 부흥시키는 창조 경제의 대표적 사례입니다.</p>
-                    <div>
-                        <span class="answer-keyword">성지순례의 경제학</span>
-                        <span class="answer-keyword">콘텐츠 투어리즘</span>
-                        <span class="answer-keyword">지역 상생 가치 모델</span>
+                <div class="answer-box-content">
+                    <div class="keyword-tag-container">
+                        <span class="keyword-tag">성지순례(콘텐츠 투어리즘)</span>
+                        <span class="keyword-tag">가상 지도의 현실 매핑(기호화)</span>
+                        <span class="keyword-tag">상생 가치 모델과 로컬 부흥</span>
+                        <span class="keyword-tag">체험형 관광 부가가치 창출</span>
+                    </div>
+                    <div class="answer-summary">
+                        <strong>[요약]</strong> 작품 속 가상의 배경(평범한 소도시, 방파제 등)이 팬덤의 기호 소비 맥락 속에서 신성한 유적으로 격상되어 현실의 관광 매출로 이어지는 현상입니다. 팬들의 자발적인 투어리즘 소비(교통, 요식, 숙박 등)와 지자체·지역 소상공인들의 협력적 머천다이징(래핑, 성지 굿즈)이 결합하여 쇠퇴해 가던 로컬 지역 경제를 성공적으로 리브랜딩하고 재생시키는 고도의 문화 상생 모델입니다.
                     </div>
                 </div>
             </div>
@@ -723,10 +704,10 @@
         const answerBox = button.parentElement.nextElementSibling;
         if (answerBox.classList.contains('show')) {
             answerBox.classList.remove('show');
-            button.textContent = '정답 및 해설 보기';
+            button.textContent = '키워드 및 해설 보기';
         } else {
             answerBox.classList.add('show');
-            button.textContent = '답안 접기';
+            button.textContent = '해설 접기';
         }
     }
 
@@ -737,10 +718,10 @@
         boxes.forEach((box, index) => {
             if (show) {
                 box.classList.add('show');
-                buttons[index].textContent = '답안 접기';
+                buttons[index].textContent = '해설 접기';
             } else {
                 box.classList.remove('show');
-                buttons[index].textContent = '정답 및 해설 보기';
+                buttons[index].textContent = '키워드 및 해설 보기';
             }
         });
     }
